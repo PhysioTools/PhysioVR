@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "physiovr.CSharp", "physiovr.CSharp.csproj", "{251563C0-B30B-E626-D5F1-60760EF789C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "physiovr.CSharp.Editor", "physiovr.CSharp.Editor.csproj", "{8E476CE8-35AE-0E5F-4864-71A122454E50}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{251563C0-B30B-E626-D5F1-60760EF789C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{251563C0-B30B-E626-D5F1-60760EF789C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{251563C0-B30B-E626-D5F1-60760EF789C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{251563C0-B30B-E626-D5F1-60760EF789C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E476CE8-35AE-0E5F-4864-71A122454E50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E476CE8-35AE-0E5F-4864-71A122454E50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E476CE8-35AE-0E5F-4864-71A122454E50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E476CE8-35AE-0E5F-4864-71A122454E50}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
