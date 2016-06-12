@@ -9,11 +9,12 @@ public class UINavigation : MonoBehaviour {
     public Toggle Panel1Toggle, Panel2Toggle;
     public Dropdown EnvironmentSelector;
     private float _timer = 3.0f;
-    public static bool GameOver = false;
-    public GameObject UDPprefab;
+    public static bool GameOver;
+    public GameObject UDPprefab, ManagerPrefab;
     private bool _firstScreenSet;
     private int _environment = 1;
     public InputField PortReceive, PortSend, IPSend;
+    public Text LocalIP;
 
     private void Start()
     {
@@ -23,15 +24,17 @@ public class UINavigation : MonoBehaviour {
         if (udp == null)
             Instantiate(UDPprefab);
 
+        var manager = GameObject.FindGameObjectWithTag("Manager");
+
+        if (manager == null)
+            Instantiate(ManagerPrefab);
+
         _firstScreenSet = false;
     }
 
-
-    // Update is called once per frame
-    void Update()
+    
+    private void Update()
     {
-        
-
         if (!_firstScreenSet)
         {
             if (!GameOver)
@@ -50,6 +53,7 @@ public class UINavigation : MonoBehaviour {
             _timer -= Time.deltaTime;
             if (_timer < 0)
             {
+                LocalIP.text = UDPReceiver.LocalIPAddress();
                 SetInterface(1);
             }
         }

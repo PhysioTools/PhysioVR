@@ -11,6 +11,7 @@ using System.Text;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
+using Assets.Manager;
 
 public class UDPReceiver : MonoBehaviour {
 
@@ -61,8 +62,7 @@ public class UDPReceiver : MonoBehaviour {
                 //  UTF8 encoding in the text format.
                 _message = Encoding.UTF8.GetString(data);
                 Debug.Log("text: " + _message);
-
-                   
+                DataManager.ParseData(_message);       
             }
             catch (Exception err)
             {
@@ -104,7 +104,7 @@ public class UDPReceiver : MonoBehaviour {
     }
 
     //get local ip address
-    public string LocalIPAddress()
+    public static string LocalIPAddress()
     {
         IPHostEntry host;
         string localIP = "";
