@@ -69,6 +69,14 @@
     <Compile Include="Assets\Adapter\Sensor.cs" />
     <Compile Include="Assets\Connector\UDPReceiver.cs" />
     <Compile Include="Assets\Connector\UDPSender.cs" />
+    <Compile Include="Assets\Environments\BooleanVar.cs" />
+    <Compile Include="Assets\Environments\Environment.cs" />
+    <Compile Include="Assets\Environments\Environments\Demo\Demo.cs" />
+    <Compile Include="Assets\Environments\Environments\Demo\SphereBehaviour.cs" />
+    <Compile Include="Assets\Environments\RangeVar.cs" />
+    <Compile Include="Assets\Environments\ReadableVar.cs" />
+    <Compile Include="Assets\Environments\UpdatableVar.cs" />
+    <Compile Include="Assets\Environments\Variable.cs" />
     <Compile Include="Assets\Manager\DataManager.cs" />
     <Compile Include="Assets\Manager\UINavigation.cs" />
     <Compile Include="Assets\VR\Cardboard\DemoScene\FPS.cs" />
