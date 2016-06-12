@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">PhysioSense</string>
+    <string name="heart_rate">Current HR is: 0.00</string>
+
+</resources>
