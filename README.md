@@ -12,6 +12,8 @@ The first release will be ready soon!
 	* Receives UDP data
 	* Identifies Sensor variable
 	* Instantiates/Updates Sensor variable
+	* Instantiates Environment + Environment variables
+	* Identifies and updates Environment variables (from UDP)
   
 
   
