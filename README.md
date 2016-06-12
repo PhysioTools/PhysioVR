@@ -4,3 +4,14 @@ PhysioVR is currently in development phase and is not yet ready for release, if 
   
 The first release will be ready soon!
   
+**Working features:**  
+  
+* PhysioAdapt:
+  
+	* UI implemented  
+	* Receives UDP data
+	* Identifies Sensor variable
+	* Instantiates/Updates Sensor variable
+  
+
+  
