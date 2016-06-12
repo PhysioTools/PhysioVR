@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Assets.Manager;
 using UnityEngine;
 
 namespace Assets.Adapter
@@ -7,6 +8,11 @@ namespace Assets.Adapter
     {
         public static List<Sensor> Sensors = new List<Sensor>();
         public static bool SensorAdded;
+        
+        private void Update()
+        {
+            ProcessData(DataManager.EnvironmentName);
+        }
 
         public static void SetSensor(string name, string type, string value)
         {
@@ -40,9 +46,36 @@ namespace Assets.Adapter
             }
         }
 
+        private int _previousHR;
+
         public void ProcessData(string environment)
         {
-            
+            if (environment == "Demo")
+            {
+                var uv = Demo.SetEnvironment().UpdatableVariables;
+                for (var i = 0; i < Sensors.Count; i++)
+                {
+                    if (Sensors[i].Type == "HR")
+                    {
+                        for (var b = 0; b < uv.Count; b++)
+                        {
+                            if (uv[b].Name.Contains("SphereHeight"))
+                            {
+                                if (int.Parse(Sensors[i].Value) >= _previousHR)
+                                {
+                                    uv[b].Value = (float.Parse(uv[b].Value) + 0.01f).ToString("0.00");
+                                }
+                                else
+                                {
+                                    uv[b].Value = (float.Parse(uv[b].Value) - 0.01f).ToString("0.00");
+                                }
+                                Demo.UpdateVariable(uv[b]);
+                            }
+                        }
+                        
+                    }
+                }
+            }
         }
     }
 }

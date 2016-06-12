@@ -5,7 +5,7 @@ using Assets.Environments;
 public class SphereBehaviour : MonoBehaviour
 {
     private static float SphereHeight = 0.5f;
-    private static bool CanLevitate;
+    private static bool CanLevitate = true;
     private static int Threshold;
     
     private void Start()
@@ -15,8 +15,9 @@ public class SphereBehaviour : MonoBehaviour
 
     private void Update()
     {
-        transform.position = CanLevitate ? new Vector3(transform.position.x, SphereHeight, transform.position.z) : new Vector3(transform.position.x, 0.5f, transform.position.z);
-        Debug.Log(CanLevitate);
+        if(transform.position.y >= 0.5f && transform.position.y <= 2.5f)
+            transform.position = CanLevitate ? new Vector3(transform.position.x, SphereHeight, transform.position.z) : new Vector3(transform.position.x, 0.5f, transform.position.z);
+        Debug.Log(SphereHeight);
     }
 
     /// <summary>

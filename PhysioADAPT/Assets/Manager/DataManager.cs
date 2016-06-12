@@ -42,7 +42,7 @@ namespace Assets.Manager
                 {
                     for (var i = 0; i < uv.Count; i++)
                     {
-                        if (uv[i].Name == name)
+                        if (uv[i].Name.Contains(name))
                         {
                             if (uv[i].Value != null && uv[i].Value != value)
                             {
