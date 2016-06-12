@@ -6,21 +6,29 @@ public class SphereBehaviour : MonoBehaviour
 {
     private static float SphereHeight = 0.5f;
     private static bool CanLevitate;
+    private static int Threshold;
     
-    /// <summary>
-    /// Set variables as classes
-    /// </summary>
     private void Start()
     {
-        var height = new RangeVar("UB_SphereHeight", "float", SphereHeight.ToString(".00"), "0.5", "2.5");
-        Demo.SetUpdatableVariable(height);
-        var levitate = new BooleanVar("UB_CanLevitate", CanLevitate.ToString());
-        Demo.SetUpdatableVariable(levitate);
+        SetVariables();
     }
 
     private void Update()
     {
         transform.position = CanLevitate ? new Vector3(transform.position.x, SphereHeight, transform.position.z) : new Vector3(transform.position.x, 0.5f, transform.position.z);
+        Debug.Log(CanLevitate);
+    }
+
+    /// <summary>
+    /// Set variables as classes
+    /// </summary>
+    private static void SetVariables()
+    {
+        var height = new RangeVar("UB_SphereHeight", "float", SphereHeight.ToString(".00"), "0.5", "2.5");
+        Demo.SetUpdatableVariable(height);
+        var levitate = new BooleanVar("UB_CanLevitate", CanLevitate.ToString());
+        Demo.SetUpdatableVariable(levitate);
+        var threshold = new ReadableVar("R_Threshold", "value");
     }
     
     /// <summary>

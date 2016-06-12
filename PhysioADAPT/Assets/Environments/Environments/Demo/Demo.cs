@@ -4,10 +4,9 @@ using Assets.Environments;
 
 public class Demo : MonoBehaviour
 {
-    private static List<UpdatableVar> UpdVariables = new List<UpdatableVar>();
-    private static List<ReadableVar> ReadVariables = new List<ReadableVar>();
-
-
+    private static readonly List<UpdatableVar> UpdVariables = new List<UpdatableVar>();
+    private static readonly List<ReadableVar> ReadVariables = new List<ReadableVar>();
+    
     public static void SetUpdatableVariable(UpdatableVar var)
     {
         UpdVariables.Add(var);
@@ -20,9 +19,12 @@ public class Demo : MonoBehaviour
 
     public static Environment SetEnvironment()
     {
-        var environment = new Environment(UpdVariables, ReadVariables);
+        var environment = new Environment("Demo", UpdVariables, ReadVariables);
         return environment;
     }
 
-    
+    public static void UpdateVariable(UpdatableVar var)
+    {
+        SphereBehaviour.UpdateVariable(var);
+    }
 }

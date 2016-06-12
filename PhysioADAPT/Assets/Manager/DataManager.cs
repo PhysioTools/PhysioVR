@@ -4,8 +4,10 @@ using UnityEngine;
 
 namespace Assets.Manager
 {
-    public class DataManager : MonoBehaviour {
-
+    public class DataManager : MonoBehaviour
+    {
+        public static string EnvironmentName = "";
+        
         public void Start()
         {
             DontDestroyOnLoad(gameObject);
@@ -23,13 +25,32 @@ namespace Assets.Manager
                 {
                     PhysioAdapter.SetSensor(words[i], words[i+1], words[i+2]);
                 }
-                else if (words[i].StartsWith("UB_"))
+                else if (words[i].StartsWith("UB_") || words[i].StartsWith("UR_"))
                 {
-                    //updates updatable boolean variable
+                    UpdatableVariable(words[i], words[i + 1]);
+                    
                 }
-                else if (words[i].StartsWith("UR_"))
+            }
+        }
+
+        private static void UpdatableVariable(string name, string value)
+        {
+            if (EnvironmentName.Contains("Demo"))
+            {
+                var uv = Demo.SetEnvironment().UpdatableVariables;
+                if (uv.Count > 0)
                 {
-                    //updates range variable
+                    for (var i = 0; i < uv.Count; i++)
+                    {
+                        if (uv[i].Name == name)
+                        {
+                            if (uv[i].Value != null && uv[i].Value != value)
+                            {
+                                uv[i].Value = value;
+                                Demo.UpdateVariable(uv[i]);
+                            }
+                        }
+                    }
                 }
             }
         }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Manager;
+using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -132,11 +133,14 @@ public class UINavigation : MonoBehaviour {
 
     public void SetEnvironment()
     {
-        _environment = EnvironmentSelector.value + 1;
+        //_environment = EnvironmentSelector.value + 1;
     }
 
     public void LaunchEnvironment()
     {
+        _environment = EnvironmentSelector.value + 1;
+        DataManager.EnvironmentName = EnvironmentSelector.captionText.text;
+        Debug.Log(DataManager.EnvironmentName);
         SceneManager.LoadScene(_environment);
     }
 
