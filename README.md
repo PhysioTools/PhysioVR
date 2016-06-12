@@ -14,6 +14,7 @@ The first release will be ready soon!
 	* Instantiates/Updates Sensor variable
 	* Instantiates Environment + Environment variables
 	* Identifies and updates Environment variables (from UDP)
+	* PhysioAdapter updates environment variables depending on sensor values
   
 
   
