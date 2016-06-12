@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{3C13E7C7-41AD-11FA-ABC6-595131D9D556}</ProjectGuid>
+    <ProjectGuid>{D8B8DCE9-F986-E8B3-DA39-D84FBE742B62}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -93,9 +93,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="physioadapt.CSharp.csproj">
-      <Project>{18C7BF3A-2D68-EB8E-E1C1-D8FF015CABB6}</Project>
-      <Name>physioadapt.CSharp</Name>
+    <ProjectReference Include="PhysioADAPT.CSharp.csproj">
+      <Project>{0F6A0D79-C5EE-752D-298C-EEBDA48B3CCC}</Project>
+      <Name>PhysioADAPT.CSharp</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

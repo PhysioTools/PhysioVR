@@ -6,7 +6,7 @@ public class DataManager : MonoBehaviour {
 
     public static void ParseData(string message)
     {
-        string[] separators = { ",", ";" };
+        string[] separators = { ",", ";", "|"};
 
         string[] words = message.Split(separators, StringSplitOptions.RemoveEmptyEntries);
 

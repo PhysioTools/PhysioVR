@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2015
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "physioadapt.CSharp", "physioadapt.CSharp.csproj", "{18C7BF3A-2D68-EB8E-E1C1-D8FF015CABB6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhysioADAPT.CSharp", "PhysioADAPT.CSharp.csproj", "{0F6A0D79-C5EE-752D-298C-EEBDA48B3CCC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "physioadapt.CSharp.Editor", "physioadapt.CSharp.Editor.csproj", "{3C13E7C7-41AD-11FA-ABC6-595131D9D556}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhysioADAPT.CSharp.Editor", "PhysioADAPT.CSharp.Editor.csproj", "{D8B8DCE9-F986-E8B3-DA39-D84FBE742B62}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,14 +11,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{18C7BF3A-2D68-EB8E-E1C1-D8FF015CABB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{18C7BF3A-2D68-EB8E-E1C1-D8FF015CABB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{18C7BF3A-2D68-EB8E-E1C1-D8FF015CABB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{18C7BF3A-2D68-EB8E-E1C1-D8FF015CABB6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3C13E7C7-41AD-11FA-ABC6-595131D9D556}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3C13E7C7-41AD-11FA-ABC6-595131D9D556}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3C13E7C7-41AD-11FA-ABC6-595131D9D556}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3C13E7C7-41AD-11FA-ABC6-595131D9D556}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F6A0D79-C5EE-752D-298C-EEBDA48B3CCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F6A0D79-C5EE-752D-298C-EEBDA48B3CCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F6A0D79-C5EE-752D-298C-EEBDA48B3CCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F6A0D79-C5EE-752D-298C-EEBDA48B3CCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8B8DCE9-F986-E8B3-DA39-D84FBE742B62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8B8DCE9-F986-E8B3-DA39-D84FBE742B62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8B8DCE9-F986-E8B3-DA39-D84FBE742B62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8B8DCE9-F986-E8B3-DA39-D84FBE742B62}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

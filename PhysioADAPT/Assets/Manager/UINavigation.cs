@@ -13,6 +13,7 @@ public class UINavigation : MonoBehaviour {
     public GameObject UDPprefab;
     private bool _firstScreenSet;
     private int _environment = 1;
+    public InputField PortReceive, PortSend, IPSend;
 
     private void Start()
     {
@@ -138,5 +139,18 @@ public class UINavigation : MonoBehaviour {
     public void Quit()
     {
         Application.Quit();
+    }
+
+    public void ReceiveConnection()
+    {
+        UDPReceiver.Port = PortReceive.text;
+        UDPReceiver.Connected = !UDPReceiver.Connected;
+    }
+
+    public void SendConnection()
+    {
+        UDPSender.IP = IPSend.text;
+        UDPSender.Port = PortSend.text;
+        UDPSender.Connected = !UDPSender.Connected;
     }
 }
