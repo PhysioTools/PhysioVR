@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{18C7BF3A-2D68-EB8E-E1C1-D8FF015CABB6}</ProjectGuid>
+    <ProjectGuid>{0F6A0D79-C5EE-752D-298C-EEBDA48B3CCC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AssemblyName>Assembly-CSharp</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -13,13 +13,11 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>Android:13</UnityBuildTarget>
     <UnityVersion>5.3.4f1</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -69,6 +67,7 @@
     <Compile Include="Assets\Adapter\Sensor.cs" />
     <Compile Include="Assets\Connector\UDPReceiver.cs" />
     <Compile Include="Assets\Connector\UDPSender.cs" />
+    <Compile Include="Assets\Data Exporter\DataExporter.cs" />
     <Compile Include="Assets\Environments\BooleanVar.cs" />
     <Compile Include="Assets\Environments\Environment.cs" />
     <Compile Include="Assets\Environments\Environments\Demo\Demo.cs" />
