@@ -7,7 +7,7 @@ public class UINavigation : MonoBehaviour {
 
     public GameObject Intro, CloseBtn, Panel1, Panel2, Panel3, PanelOver;
     public GameObject Settings1, Settings2;
-    public Toggle Panel1Toggle, Panel2Toggle;
+    public Toggle Panel1Toggle, Panel2Toggle, ExportData;
     public Dropdown EnvironmentSelector;
     private float _timer = 3.0f;
     public static bool GameOver;
@@ -140,8 +140,9 @@ public class UINavigation : MonoBehaviour {
     {
         _environment = EnvironmentSelector.value + 1;
         DataManager.EnvironmentName = EnvironmentSelector.captionText.text;
-        Debug.Log(DataManager.EnvironmentName);
         SceneManager.LoadScene(_environment);
+        if (ExportData.isOn)
+            DataManager.SaveData = true;
     }
 
     public void Quit()

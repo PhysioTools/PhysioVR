@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Assets.Environments;
+using Assets.Manager;
 
 public class SphereBehaviour : MonoBehaviour
 {
@@ -17,7 +18,6 @@ public class SphereBehaviour : MonoBehaviour
     {
         if(transform.position.y >= 0.5f && transform.position.y <= 2.5f)
             transform.position = CanLevitate ? new Vector3(transform.position.x, SphereHeight, transform.position.z) : new Vector3(transform.position.x, 0.5f, transform.position.z);
-        Debug.Log(SphereHeight);
     }
 
     /// <summary>
@@ -30,6 +30,9 @@ public class SphereBehaviour : MonoBehaviour
         var levitate = new BooleanVar("UB_CanLevitate", CanLevitate.ToString());
         Demo.SetUpdatableVariable(levitate);
         var threshold = new ReadableVar("R_Threshold", "value");
+        Demo.SetReadableVariable(threshold);
+
+        DataManager.AllVariablesSet = true;
     }
     
     /// <summary>

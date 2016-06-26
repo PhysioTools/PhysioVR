@@ -38,6 +38,8 @@ public class DataExporter : MonoBehaviour {
         Islogging = true;
 
         _path = Application.persistentDataPath;
+        //_path = Application.dataPath + "/PhysioVR_Log/";
+
         if (!Directory.Exists(_path))
         {
             System.IO.Directory.CreateDirectory(_path);
@@ -81,25 +83,25 @@ public class DataExporter : MonoBehaviour {
                 _header.Add(rv[i].Name);
             }
         }
-        
     }
 
     private void SetValues()
     {
-
-        
         if (DataManager.EnvironmentName == "Demo")
         {
             var uv = Demo.SetEnvironment().UpdatableVariables;
             var rv = Demo.SetEnvironment().ReadableVariables;
+            
             if (!_setFirstLine)
             {
                 _variables.Add(DateTime.Now.ToString("HHmmss") + DateTime.Now.Millisecond);
+                
                 for (var i = 0; i < uv.Count; i++)
                 {
                     _variables.Add(uv[i].Value);
                 }
-
+                
+                
                 for (var i = 0; i < rv.Count; i++)
                 {
                     _variables.Add(rv[i].Value);
@@ -109,6 +111,7 @@ public class DataExporter : MonoBehaviour {
             else
             {
                 _variables[0] = DateTime.Now.ToString("HHmmss") + DateTime.Now.Millisecond;
+
                 for (var i = 0; i < uv.Count; i++)
                 {
                     _variables[i + 1] = uv[i].Value;
@@ -116,7 +119,7 @@ public class DataExporter : MonoBehaviour {
 
                 for (var i = 0; i < rv.Count; i++)
                 {
-                    _variables[uv.Count+ 1 + i] = rv[i].Value;
+                    _variables[uv.Count + 1 + i] = rv[i].Value;
                 }
             }
         }

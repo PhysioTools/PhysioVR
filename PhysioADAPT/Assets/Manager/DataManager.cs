@@ -7,10 +7,17 @@ namespace Assets.Manager
     public class DataManager : MonoBehaviour
     {
         public static string EnvironmentName = "";
-        
-        public void Start()
+        public static bool SaveData, AllVariablesSet;
+
+        private void Start()
         {
             DontDestroyOnLoad(gameObject);
+        }
+
+        private void Update()
+        {
+            if (SaveData && AllVariablesSet)
+                DataExporter.StartLog = true;
         }
 
         public static void ParseData(string message)
