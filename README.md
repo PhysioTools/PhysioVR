@@ -15,6 +15,8 @@ The first release will be ready soon!
 	* Instantiates Environment + Environment variables
 	* Identifies and updates Environment variables (from UDP)
 	* PhysioAdapter updates environment variables depending on sensor values
+	* DataExporter implemented (csv log)
   
+		(next implementation -> UDP data streaming)
 
   
