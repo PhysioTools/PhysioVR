@@ -78,6 +78,7 @@ public class UDPSender : MonoBehaviour {
                     
                     // Send the message to the remote client.
                     Client.Send(data, data.Length, RemoteEndPoint);
+                    //Debug.Log(message);
                 }
             }
 

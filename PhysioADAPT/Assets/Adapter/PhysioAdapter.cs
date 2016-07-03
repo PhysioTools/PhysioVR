@@ -71,8 +71,7 @@ namespace Assets.Adapter
                                 }
                                 Demo.UpdateVariable(uv[b]);
                             }
-                        }
-                        
+                        }   
                     }
                 }
             }

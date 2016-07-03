@@ -3,6 +3,7 @@ using System.IO;
 using System;
 using System.Globalization;
 using System.Collections.Generic;
+using Assets.Adapter;
 using Assets.Manager;
 
 public class DataExporter : MonoBehaviour {
@@ -72,6 +73,7 @@ public class DataExporter : MonoBehaviour {
         {
             var uv = Demo.SetEnvironment().UpdatableVariables;
             var rv = Demo.SetEnvironment().ReadableVariables;
+            var sv = PhysioAdapter.Sensors;
             
             for (var i = 0; i < uv.Count; i++)
             {
@@ -82,6 +84,11 @@ public class DataExporter : MonoBehaviour {
             {
                 _header.Add(rv[i].Name);
             }
+
+            for (var i = 0; i < sv.Count; i++)
+            {
+                _header.Add(sv[i].Name);
+            }
         }
     }
 
@@ -91,7 +98,8 @@ public class DataExporter : MonoBehaviour {
         {
             var uv = Demo.SetEnvironment().UpdatableVariables;
             var rv = Demo.SetEnvironment().ReadableVariables;
-            
+            var sv = PhysioAdapter.Sensors;
+
             if (!_setFirstLine)
             {
                 _variables.Add(DateTime.Now.ToString("HHmmss") + DateTime.Now.Millisecond);
@@ -106,6 +114,12 @@ public class DataExporter : MonoBehaviour {
                 {
                     _variables.Add(rv[i].Value);
                 }
+
+                for (var i = 0; i < sv.Count; i++)
+                {
+                    _variables.Add(sv[i].Value);
+                }
+
                 _setFirstLine = true;
             }
             else
@@ -120,6 +134,11 @@ public class DataExporter : MonoBehaviour {
                 for (var i = 0; i < rv.Count; i++)
                 {
                     _variables[uv.Count + 1 + i] = rv[i].Value;
+                }
+
+                for (var i = 0; i < sv.Count; i++)
+                {
+                    _variables.Add(sv[i].Value);
                 }
             }
         }

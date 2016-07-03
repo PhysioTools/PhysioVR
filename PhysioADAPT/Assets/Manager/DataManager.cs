@@ -18,8 +18,15 @@ namespace Assets.Manager
         {
             if (SaveData && AllVariablesSet)
                 DataExporter.StartLog = true;
+
+            CreateStringMessage();
         }
 
+
+        /// <summary>
+        /// Splits the incoming data and instantiates/updates variables
+        /// </summary>
+        /// <param name="message"></param>
         public static void ParseData(string message)
         {
             string[] separators = { ",", ";", "|"};
@@ -40,6 +47,12 @@ namespace Assets.Manager
             }
         }
 
+
+        /// <summary>
+        /// This method updates the existing variables classes - one method per environment is required
+        /// </summary>
+        /// <param name="name">variable name</param>
+        /// <param name="value">variable value</param>
         private static void UpdatableVariable(string name, string value)
         {
             if (EnvironmentName.Contains("Demo"))
@@ -62,9 +75,41 @@ namespace Assets.Manager
             }
         }
 
+
+        /// <summary>
+        /// Creates the string according to the existing values
+        /// </summary>
         public static void CreateStringMessage()
         {
+            if (EnvironmentName == "Demo")
+            {
+                var uv = Demo.SetEnvironment().UpdatableVariables;
+                var rv = Demo.SetEnvironment().ReadableVariables;
+                var sv = PhysioAdapter.Sensors;
 
+                var message = "";
+
+                for (var i = 0; i < uv.Count; i++)
+                {
+                    if(uv[i].Name.StartsWith("UB"))
+                        message = uv[i].Name + "," + uv[i].Value;
+                    else
+                        message = uv[i].Name + "," + uv[i].Type + "," + uv[i].Value + "," + uv[i].Min + "," + uv[i].Max;
+                    UDPSender.SendStringMessage(message);
+                }
+
+                for (var i = 0; i < rv.Count; i++)
+                {
+                    message = rv[i].Name + "," + rv[i].Value;
+                    UDPSender.SendStringMessage(message);
+                }
+
+                for (var i = 0; i < sv.Count; i++)
+                {
+                    message = sv[i].Name + "," + sv[i].Value;
+                    UDPSender.SendStringMessage(message);
+                }
+            }   
         }
     }
 }

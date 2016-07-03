@@ -25,7 +25,7 @@ public class SphereBehaviour : MonoBehaviour
     /// </summary>
     private static void SetVariables()
     {
-        var height = new RangeVar("UB_SphereHeight", "float", SphereHeight.ToString(".00"), "0.5", "2.5");
+        var height = new RangeVar("UR_SphereHeight", "float", SphereHeight.ToString(".00"), "0.5", "2.5");
         Demo.SetUpdatableVariable(height);
         var levitate = new BooleanVar("UB_CanLevitate", CanLevitate.ToString());
         Demo.SetUpdatableVariable(levitate);
