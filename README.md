@@ -18,4 +18,8 @@ The first release will be ready soon!
 	* DataExporter implemented (csv log)
 	* Sends UDP data with all existing variables
 
+* PhysioWOz:
   
+	* UI Navigation implemented  
+	* Receives UDP data but doesn't parse the data
+	* Prepared to send data but not yet streaming
